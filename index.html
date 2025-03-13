@@ -94,15 +94,68 @@
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+        .language-buttons {
+            text-align: center;
+            margin: 20px;
+        }
+        .language-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #da10d3;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .language-buttons button:hover {
+            background-color: #fb73f7;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(230, 128, 236, 0.9);
+            color: white;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        const translations = {
+            en: {
+                about: "About Us",
+                aboutText: "To promote education in artificial intelligence, engineering, technology, intangible heritage, and sports.",
+                projects: "Our Projects",
+                contact: "Contact Us"
+            },
+            fr: {
+                about: "À Propos de Nous",
+                aboutText: "Promouvoir l’éducation en intelligence artificielle, ingénierie, technologie, patrimoine immatériel et sports.",
+                projects: "Nos Projets",
+                contact: "Contactez-Nous"
+            },
+            ar: {
+                about: "معلومات عنا",
+                aboutText: "تعزيز التعليم في الذكاء الاصطناعي والهندسة والتكنولوجيا والتراث غير المادي والرياضة.",
+                projects: "مشاريعنا",
+                contact: "اتصل بنا"
+            }
+        };
+
+        function changeLanguage(lang) {
+            document.getElementById('about-title').innerText = translations[lang].about;
+            document.getElementById('about-text').innerText = translations[lang].aboutText;
+            document.getElementById('projects-title').innerText = translations[lang].projects;
+            document.getElementById('contact-title').innerText = translations[lang].contact;
+        }
+    </script>
 </head>
 <body>
     <header>Layla Foundation</header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+    <div class="language-buttons">
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+        <button onclick="changeLanguage('ar')">العربية</button>
+    </div>
     <div class="container" id="about">
         <h2>About Us</h2>
         <img src="https://static.wixstatic.com/media/11062b_8880bb940093467786498739590163bb~mv2.jpg/v1/fill/w_568,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_8880bb940093467786498739590163bb~mv2.jpg" alt="Kids playing">
@@ -130,11 +183,12 @@
     </div>
     <div class="container" id="contact">
         <h2>Contact Us</h2>
-        <p>Email: I dont have your email</p>
-        <p>Phone: and this</p>
+        <p>Email: NO INFO </p>
+        <p>Phone: NO INFO</p>
     </div>
     <footer>
         &copy; 2025 Layla Foundation. All rights reserved.
     </footer>
 </body>
 </html>
+
